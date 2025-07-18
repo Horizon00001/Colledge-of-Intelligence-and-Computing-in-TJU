@@ -18,5 +18,5 @@ I salute the spirit of open-source sharing and salute to all those with the spir
     1.https://www.byhy.net/auto/selenium/01/ 学习selenium的安装，驱动的安装。
     本教程中默认Chrome浏览器，Edge请自学。本教程仅要求安装完驱动即可。
     注：Chrome驱动的安装需要连接到谷歌服务器
-    2.下载运行自动查询成绩即可
+    2.下载运行自动查询成绩即可,请运行学生成绩查询自动化脚本
     
