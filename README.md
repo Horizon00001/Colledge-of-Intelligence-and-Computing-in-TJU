@@ -1,15 +1,13 @@
 # TJU
 How to Get All Scores in CIC,Tianjin University
 
-理念：
-
-    First and foremost, I have always adhered to this belief 'Do no evil' and  firmly believe that technology will make our lives better.I salute the spirit of open-source sharing and salute to all those with the spirit of open source.
-
-如果认可，请星标万分感谢
+First and foremost, I have always adhered to this belief 'Do no evil' and  firmly believe 
+that technology will make our lives better.
+I salute the spirit of open-source sharing and salute to all those with the spirit of open source.
 
 理论上可获取各个年级数据，可与我分享
 
-本教程使用的所有数据均为公开数据，仅个人学习使用，禁止商用。by ZHL
+本教程使用的所有数据均为公开数据，仅个人学习使用，禁止商用。by ZHL 联系方式：QQ:1302485828
 
 注意事项：
 
@@ -30,7 +28,7 @@ How to Get All Scores in CIC,Tianjin University
     2.驱动运行正常，请运行学生成绩查询自动化脚本即可
 
 
-使用效果：
+使用效果：（隐私问题，已隐去学号与姓名）
 
 <img width="135" height="500" alt="image" src="https://github.com/user-attachments/assets/31ba5451-86c2-48ba-8e9d-be108df7ec7c" />
 
