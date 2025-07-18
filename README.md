@@ -4,19 +4,21 @@ How to Get All Scores in CIC,Tianjin University
 First and foremost, I have always adhered to this belief 'Do no evil' and  firmly believe that technology will make our lives better.
 I salute the spirit of open-source sharing and salute to all those with the spirit of open source.
 
-如果认可请星标，感谢
+如果认可，请星标万分感谢
+
+理论上可获取各个年级数据，可与我分享
 
 本教程使用的所有数据均为公开数据，仅个人学习使用，禁止商用。by ZHL
-
 
 注意事项：
 
     1.需要掌握python和一定的前端知识
     
-    2.相对路径问题已解决
+    2.请安装Chrome和selenium及其驱动（见教程）
     
     3.如有问题请联系 QQ:1302485828
 
+    
     
 使用教程：
 
@@ -29,5 +31,5 @@ I salute the spirit of open-source sharing and salute to all those with the spir
 
 使用效果：
 
-    1.<img width="135" height="500" alt="image" src="https://github.com/user-attachments/assets/31ba5451-86c2-48ba-8e9d-be108df7ec7c" />
+<img width="135" height="500" alt="image" src="https://github.com/user-attachments/assets/31ba5451-86c2-48ba-8e9d-be108df7ec7c" />
 
