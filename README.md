@@ -4,6 +4,7 @@ How to Get All Scores in CIC,Tianjin University
 First and foremost, I have always adhered to this belief 'Do no evil' and  firmly believe that technology will make our lives better.
 I salute the spirit of open-source sharing and salute to all those with the spirit of open source.
 
+如果认可请星标，感谢
 
 本教程使用的所有数据均为公开数据，仅个人学习使用，禁止商用。by ZHL
 
