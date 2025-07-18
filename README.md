@@ -10,7 +10,7 @@ I salute the spirit of open-source sharing and salute to all those with the spir
 
 注意事项：
     1.需要掌握python和一定的前端知识
-    2.打开或创建文件的相对路径需要自己覆盖在我的
+    2.相对路径问题已解决
     3.如有问题请联系 QQ:1302485828
 
     
