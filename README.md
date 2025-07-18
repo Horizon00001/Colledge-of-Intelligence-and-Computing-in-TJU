@@ -31,6 +31,8 @@ I salute the spirit of open-source sharing and salute to all those with the spir
     
     2.驱动运行正常，请运行学生成绩查询自动化脚本即可
 
+    3.下载zip文件解压文件，编译器打开文件即可使用
+
 
 使用效果：（隐私问题，已隐去学号与姓名）
 
