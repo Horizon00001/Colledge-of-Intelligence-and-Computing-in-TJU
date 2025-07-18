@@ -27,7 +27,8 @@ I salute the spirit of open-source sharing and salute to all those with the spir
     2.驱动运行正常，请运行学生成绩查询自动化脚本即可
 
 
+使用效果：
     
 
-<img width="271" height="1093" alt="image" src="https://github.com/user-attachments/assets/31ba5451-86c2-48ba-8e9d-be108df7ec7c" />
+<img width="135" height="500" alt="image" src="https://github.com/user-attachments/assets/31ba5451-86c2-48ba-8e9d-be108df7ec7c" />
 
