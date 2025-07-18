@@ -28,7 +28,6 @@ I salute the spirit of open-source sharing and salute to all those with the spir
 
 
 使用效果：
-    
 
-<img width="135" height="500" alt="image" src="https://github.com/user-attachments/assets/31ba5451-86c2-48ba-8e9d-be108df7ec7c" />
+    1.<img width="135" height="500" alt="image" src="https://github.com/user-attachments/assets/31ba5451-86c2-48ba-8e9d-be108df7ec7c" />
 
