@@ -8,9 +8,10 @@ I salute the spirit of open-source sharing and salute to all those with the spir
 理论上可获取各个年级数据，可与我分享
 
 本教程使用的所有数据均为公开数据，仅个人学习使用，禁止商用。
+
 作者：
 
-    by ZHL 联系方式：QQ:1302485828
+    by ZHL   联系方式：QQ:1302485828
 
 注意事项：
 
