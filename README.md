@@ -1,4 +1,4 @@
-# TJU
+# TJU_CIC_RANK
 How to Get All Scores in CIC,Tianjin University
 
 First and foremost, I have always adhered to this belief 'Do no evil' and  firmly believe 
