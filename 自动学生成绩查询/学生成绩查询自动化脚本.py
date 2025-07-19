@@ -25,7 +25,7 @@ with open('.\自动学生成绩查询\学号转专业.txt', 'r', encoding='utf-8
 
 # 创建或打开"成绩.txt"文件，写入表头
 with open('.\自动学生成绩查询\成绩.txt', 'a', encoding='utf-8') as f:
-    f.write('学号,姓名,加权,排名' + '\n')  # 写入
+    f.write('学号  姓名  加权  排名' + '\n')  # 写入
 
 # 遍历字典中的每个学号
 for i in mydict.keys():
@@ -62,7 +62,7 @@ for i in mydict.keys():
     # 将成绩信息写入文件
     with open('.\自动学生成绩查询\成绩.txt', 'a', encoding='utf-8') as f:
             for i in range(len(element_right)):
-                f.write(element_right[i].text + ', ')  # 写入每个成绩项
+                f.write(element_right[i].text + '  ')  # 写入每个成绩项
             f.write('\n')  # 换行
     
     # 关闭浏览器
