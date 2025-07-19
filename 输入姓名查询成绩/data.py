@@ -605,7 +605,7 @@ for line in data.splitlines():
     l = line.split()
     score_dict[l[1]] = l[2]
     rank_dict[l[1]] = l[3]
-    print(l[1], score_dict[l[1]], rank_dict[l[1]])
+    #print(l[1], score_dict[l[1]], rank_dict[l[1]])
 
 
 """
