@@ -6,7 +6,7 @@ with open('成绩.txt', 'r', encoding='utf-8') as of:
         s += line
 l = []
 ans = []
-with open('D:\VSCodeFile\Python\学号.txt', 'r', encoding='utf-8') as f:
+with open('\学号.txt', 'r', encoding='utf-8') as f:
     for line in f:
         l = line.split()
         if '3024244' in l[0]:
