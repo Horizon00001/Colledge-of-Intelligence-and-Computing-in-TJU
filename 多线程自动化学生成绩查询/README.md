@@ -1,6 +1,6 @@
 # 多线程
 大幅提升速度，笔者电脑配置限制，用了大概十分钟。其实可以更快。
-
+面向对象重写
 作者：
 
     by ZHL   联系方式：QQ:1302485828
@@ -25,13 +25,11 @@
 
 
 
-自动查询学生成绩
+多线程自动化查询学生成绩
 
 <img width="135" height="500" alt="image" src="https://github.com/user-attachments/assets/31ba5451-86c2-48ba-8e9d-be108df7ec7c" />
 
-输入姓名查询成绩
 
-<img width="250" height="240" alt="image" src="https://github.com/user-attachments/assets/68b024a5-ea67-4ea7-b787-c64277b5135f" />
 
 
 
