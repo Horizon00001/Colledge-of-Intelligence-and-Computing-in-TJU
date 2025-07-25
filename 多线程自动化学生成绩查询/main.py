@@ -60,8 +60,7 @@ class Work:
 
     def run(self):
         threads = []
-        for i in range(1, 5):
-        #for i in range(1, 5):
+        for i in range(1, len(column.column_ID)):
             t1 = threading.Thread(target=self.work, args=(i,))
             t1.start()
             threads.append(t1)
