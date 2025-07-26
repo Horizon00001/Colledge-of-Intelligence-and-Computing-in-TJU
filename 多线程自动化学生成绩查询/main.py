@@ -22,6 +22,7 @@ class Work:
         self.ws.append(['ID', 'Name', 'Score', 'Rank'])
         self.excel_lock = threading.Lock()
         self.error_cnt = 0
+        self.right_cnt = 0
         # 加载学生信息列数据
         self.column_ID = column.column_ID
         self.column_Name = column.column_Name
@@ -63,7 +64,8 @@ class Work:
             data = [element.text for element in element_right]
             with self.excel_lock:
                 self.ws.append(data)
-                print(data[0])
+            right_cnt += 1
+            print(f'第{right_cnt}个', data[0])
             
         except Exception as e:
             print('错误：' , e)
@@ -88,16 +90,9 @@ class Work:
             t.join()
         
         self.wb.save('result.xlsx')
+        print(f'成功{self.right_cnt}个，失败{self.error_cnt}个')
 
-
-
-#%%
-worker = Work()
-#%%
-worker.run()
-
-
-
-
-
+if __name__ == '__main__':
+    worker = Work()
+    worker.run()
 
