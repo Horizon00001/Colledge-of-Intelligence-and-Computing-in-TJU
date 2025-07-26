@@ -64,8 +64,8 @@ class Work:
             data = [element.text for element in element_right]
             with self.excel_lock:
                 self.ws.append(data)
-            right_cnt += 1
-            print(f'第{right_cnt}个', data[0])
+            self.right_cnt += 1
+            print(f'第{self.right_cnt}个', data[0])
             
         except Exception as e:
             print('错误：' , e)
