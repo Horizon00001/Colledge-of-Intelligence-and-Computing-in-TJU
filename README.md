@@ -33,7 +33,7 @@
 
 ## 成绩分布
 
-![成绩分布图表](score_distribution.png)
+![1753610890675](image/README/1753610890675.png)
 
 ## 文件说明
 
