@@ -68,7 +68,7 @@ class Work:
             print(f'第{self.right_cnt}个', data[0])
             
         except Exception as e:
-            print('错误：' , e)
+            print(f'错误 (学号: {self.column_ID[i]}, 姓名: {self.column_Name[i]}): {e}')
             self.error_cnt += 1
 
         finally:
@@ -91,6 +91,11 @@ class Work:
         
         self.wb.save('result.xlsx')
         print(f'成功{self.right_cnt}个，失败{self.error_cnt}个')
+        # 打印所有失败的学号和姓名
+        for i in range(1, len(self.column_ID)):
+            if self.column_ID[i] in self.visited:
+                continue
+            print(f'错误 (学号: {self.column_ID[i]}, 姓名: {self.column_Name[i]})')
 
 if __name__ == '__main__':
     worker = Work()
