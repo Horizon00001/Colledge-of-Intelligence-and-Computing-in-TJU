@@ -31,6 +31,10 @@
    ```
 3. 查询结果将自动保存到result.xlsx文件
 
+## 成绩分布
+
+![成绩分布图表](score_distribution.png)
+
 ## 文件说明
 
 - main.py: 核心查询逻辑实现，包含多线程管理和Excel导出
