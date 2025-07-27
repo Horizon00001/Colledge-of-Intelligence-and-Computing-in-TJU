@@ -33,7 +33,8 @@
 
 ## 成绩分布
 
-![1753610890675](image/README/1753610890675.png)
+<img width="3569" height="2108" alt="score_distribution" src="https://github.com/user-attachments/assets/cde1ebc1-ff7e-4a45-bb45-b98c7dd4ea74" />
+
 
 ## 文件说明
 
