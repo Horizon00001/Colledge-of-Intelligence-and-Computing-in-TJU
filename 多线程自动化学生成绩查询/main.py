@@ -11,13 +11,15 @@ from selenium.webdriver.support import expected_conditions as EC
 from tqdm import tqdm
 opt = Options()
 opt.add_argument('--headless=new')   
-opt.add_argument('--disable-images')   
-opt.add_argument('--disable-javascript')   
-opt.add_argument('--no-sandbox')   
+opt.add_argument('--disable-images')     
+#opt.add_experimental_option("excludeSwitches", ["disable-logging"])  # 关闭 DevTools 日志
+opt.add_argument('--disable-gpu')
 opt.add_argument('--disable-dev-shm-usage')
 opt.add_argument('--disable-software-rasterizer')
 opt.add_argument('--disable-picture-in-picture')
 opt.add_argument('--window-size=1920,1080')
+#opt.add_argument("--log-level=3")  # 0=INFO, 1=WARN, 2=ERROR, 3=FATAL
+
 
 class Work:
     def __init__(self):  
@@ -32,7 +34,7 @@ class Work:
         # 加载学生信息列数据
         self.column_ID = column.column_ID
         self.column_Name = column.column_Name
-        self.visited = {}
+        self.visited = {} 
         print(len(self.column_ID))
 
     def work(self, i):
@@ -41,8 +43,8 @@ class Work:
             wd.get('https://z9lbopmd.yichafen.com/qz/138Owtgzjt')
             #sleep(1)
             # 等待页面加载完成
-            webDriverWait = WebDriverWait(wd, 10)
-            webDriverWait.until(EC.presence_of_all_elements_located((By.CSS_SELECTOR, '[placeholder="请输入学号"]')))
+            webDriverWait = WebDriverWait(wd, 20)
+            webDriverWait.until(EC.presence_of_element_located((By.CSS_SELECTOR, '[placeholder="请输入学号"]')))
             # 定位学号和姓名输入框
             element_id = wd.find_element(By.CSS_SELECTOR, '[placeholder="请输入学号"]')
             element_name = wd.find_element(By.CSS_SELECTOR, '[placeholder="请输入姓名"]')
@@ -57,8 +59,8 @@ class Work:
             # 等待页面加载完成
             target = wd.window_handles[-1]
             wd.switch_to.window(target)
-            webDriverWait = WebDriverWait(wd, 10)
-            webDriverWait.until(EC.presence_of_all_elements_located((By.CLASS_NAME, 'right_cell')))
+            webDriverWait = WebDriverWait(wd, 20)
+            webDriverWait.until(EC.presence_of_element_located((By.CLASS_NAME, 'right_cell')))
             '''
             for handle in wd.window_handles:
                 wd.switch_to.window(handle)
@@ -72,9 +74,10 @@ class Work:
                 self.ws.append(data)
             self.right_cnt += 1
             print(f'第{self.right_cnt}个', data[0])
-            
+            self.visited[self.column_ID[i]] = True
         except Exception as e:
-            print(f'错误 (学号: {self.column_ID[i]}, 姓名: {self.column_Name[i]}): {e}')
+            print('重复', self.column_ID[i], self.column_Name[i])
+            self.work(self,i)
             self.error_cnt += 1
 
         finally:
@@ -87,11 +90,10 @@ class Work:
         for i in tqdm(range(1, len(self.column_ID))):
             if self.column_ID[i] in self.visited:
                 continue
-            self.visited[self.column_ID[i]] = True
             t1 = threading.Thread(target=self.work, args=(i,))
             t1.start()
             threads.append(t1)
-            sleep(0.9) 
+            sleep(0.5) 
         for t in threads:
             t.join()
         
