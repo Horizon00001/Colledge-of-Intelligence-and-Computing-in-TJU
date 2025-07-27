@@ -18,6 +18,7 @@ opt.add_argument('--disable-dev-shm-usage')
 opt.add_argument('--disable-software-rasterizer')
 opt.add_argument('--disable-picture-in-picture')
 opt.add_argument('--window-size=1920,1080')
+#opt.add_experimental_option('excludeSwitches', ['enable-automation'])
 #opt.add_argument("--log-level=3")  # 0=INFO, 1=WARN, 2=ERROR, 3=FATAL
 
 
@@ -76,6 +77,8 @@ class Work:
             print(f'第{self.right_cnt}个', data[0])
             self.visited[self.column_ID[i]] = True
         except Exception as e:
+            if wd:
+                wd.quit()
             print('重复', self.column_ID[i], self.column_Name[i])
             self.work(self,i)
             self.error_cnt += 1
