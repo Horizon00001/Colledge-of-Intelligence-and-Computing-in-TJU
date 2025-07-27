@@ -8,9 +8,15 @@ import threading
 import column
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from tqdm import tqdm
 opt = Options()
-opt.add_argument('--headless')
-opt.add_argument('--disable-gpu')
+opt.add_argument('--headless=new')   
+opt.add_argument('--disable-images')   
+opt.add_argument('--disable-javascript')   
+opt.add_argument('--no-sandbox')   
+opt.add_argument('--disable-dev-shm-usage')
+opt.add_argument('--disable-software-rasterizer')
+opt.add_argument('--disable-picture-in-picture')
 opt.add_argument('--window-size=1920,1080')
 
 class Work:
@@ -78,7 +84,7 @@ class Work:
 
     def run(self):
         threads = []
-        for i in range(1, len(self.column_ID)):
+        for i in tqdm(range(1, len(self.column_ID))):
             if self.column_ID[i] in self.visited:
                 continue
             self.visited[self.column_ID[i]] = True
