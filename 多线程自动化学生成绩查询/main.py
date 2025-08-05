@@ -9,15 +9,25 @@ import column
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from tqdm import tqdm
+
+
 opt = Options()
+# 忽略证书错误
+opt.add_argument('--ignore-certificate-errors')
+# 忽略 Bluetooth: bluetooth_adapter_winrt.cc:1075 Getting Default Adapter failed. 错误
+opt.add_experimental_option('excludeSwitches', ['enable-automation'])
+# 忽略 DevTools listening on ws://127.0.0.1... 提示
+opt.add_experimental_option('excludeSwitches', ['enable-logging'])
+
 opt.add_argument('--headless=new')   
 opt.add_argument('--disable-images')     
-#opt.add_experimental_option("excludeSwitches", ["disable-logging"])  # 关闭 DevTools 日志
+# opt.add_experimental_option("excludeSwitches", ["disable-logging"])  # 关闭 DevTools 日志
 opt.add_argument('--disable-gpu')
 opt.add_argument('--disable-dev-shm-usage')
 opt.add_argument('--disable-software-rasterizer')
 opt.add_argument('--disable-picture-in-picture')
 opt.add_argument('--window-size=1920,1080')
+
 #opt.add_experimental_option('excludeSwitches', ['enable-automation'])
 #opt.add_argument("--log-level=3")  # 0=INFO, 1=WARN, 2=ERROR, 3=FATAL
 
@@ -74,14 +84,14 @@ class Work:
             with self.excel_lock:
                 self.ws.append(data)
             self.right_cnt += 1
-            print(f'第{self.right_cnt}个', data[0])
+            print(f'正在进行第{self.right_cnt}个', data[0])
             self.visited[self.column_ID[i]] = True
         except Exception as e:
             if wd:
                 wd.quit()
-            print('重复', self.column_ID[i], self.column_Name[i])
-            self.work(self,i)
-            self.error_cnt += 1
+            print("错误：", e)
+            print('正在重新开始该进程', self.column_ID[i], self.column_Name[i])
+            self.work(i)
 
         finally:
             if wd:
@@ -101,7 +111,7 @@ class Work:
             t.join()
         
         self.wb.save('result.xlsx')
-        print(f'成功{self.right_cnt}个，失败{self.error_cnt}个')
+        print(f'成功{self.right_cnt}个，失败{len(self.column_ID) - self.right_cnt}个')
         # 打印所有失败的学号和姓名
         for i in range(1, len(self.column_ID)):
             if self.column_ID[i] in self.visited:
@@ -111,4 +121,3 @@ class Work:
 if __name__ == '__main__':
     worker = Work()
     worker.run()
-
