@@ -30,6 +30,7 @@ opt.add_argument('--disable-picture-in-picture')
 
 class Work:
     def __init__(self):  
+        '''
         self.config = ConfigParser()
         self.config.read("config.ini", encoding="utf-8")
         self.url = self.config['Website']['query_url']
@@ -38,6 +39,10 @@ class Work:
         print(f"正在查询: {self.url}")
         print(f"最大进程数为:{self.max_tasks}")
         print(f"网页预留间隔为:{self.internal_page}")
+        '''
+        self.url = 'https://z9lbopmd.yichafen.com//qz//138Owtgzjt'
+        self.max_tasks = 5
+        self.internal_page = 3
         self.visited = {}
         self.wb = Workbook()
         self.ws = self.wb.active
