@@ -1,62 +1,65 @@
-# 学生成绩查询自动化工具
+# 学生信息查询系统
 
-这是一个基于Python的多线程学生成绩查询自动化脚本，能够批量查询学生成绩并导出结果。
+## 项目简介
+本项目实现了一个基于Selenium的多线程学生信息查询工具，能够自动从指定网站批量查询学生信息，并将结果保存到Excel文件中。
 
-## 功能特点
+## 文件说明
 
-- 多线程并发查询，提高查询效率
-- 自动将查询结果导出到Excel文件
-- 详细的错误处理和结果统计
+### 1. main.py
+主程序文件，包含核心查询逻辑：
+- 使用Selenium自动化浏览器操作
+- 多线程并发查询提高效率（默认10线程）
+- 支持无头模式(headless)运行
+- 自动保存查询结果到result.xlsx
+- 提供进度条显示查询进度
 
-## 环境要求
+### 2. cic.xlsx
+学生数据源文件，包含两列数据：
+- A列：学号
+- B列：姓名
 
-- Python 3.8+
-- Chrome浏览器
-- ChromeDriver (需与Chrome版本匹配)
+### 3. column.py
+数据加载模块，负责：
+- 从cic.xlsx读取学生数据
+- 将学号和姓名分别存储在column_ID和column_Name列表中
 
-## 安装步骤
+## 使用说明
 
-1. 克隆或下载本项目到本地
-2. 安装依赖包：
-   ```
-   pip install openpyxl selenium tqdm 
-   ```
+1. **环境准备**：
+   - 安装Python 
+   - 安装依赖库：pip install selenium openpyxl tqdm configparser
 
-## 使用方法
+2. **配置修改**：
+- 如需修改查询URL，编辑main.py中Work类的url属性。
+- 修改线程数：调整max_tasks值
 
-1. 确保column.py文件中包含正确的学号和姓名数据
-2. 运行查询脚本：
-   ```
-   python main.py
-   ```
-3. 查询结果将自动保存到result.xlsx文件
+3. **运行程序**：
+-main.py
+
+
+4. **结果查看**：
+- 查询结果将保存在result.xlsx中
+- 控制台会显示查询进度和统计信息
+
+## 注意事项
+
+1. 请确保cic.xlsx与程序在同一目录
+2. 查询网站可能需要验证码或动态加载，程序可能需要相应调整
+3. 默认使用无头模式，如需调试可移除--headless参数
+
+## 作者
+-by zhl
+-QQ：1302485828
+
 
 ## 成绩分布
 
 <img width="3569" height="2108" alt="score_distribution" src="https://github.com/user-attachments/assets/cde1ebc1-ff7e-4a45-bb45-b98c7dd4ea74" />
 
+## 效果
 
-## 文件说明
+<img width="1952" height="455" alt="屏幕截图 2025-08-09 172049" src="https://github.com/user-attachments/assets/1dc9b3ae-0f6a-4623-a031-a09abde42c88" />
 
-- main.py: 核心查询逻辑实现，包含多线程管理和Excel导出
-- column.py: 存储学生学号和姓名数据
-- cic.xlsx: 学生信息Excel文件
-- result.xlsx: 查询结果输出文件
 
-## 注意事项
 
-- 请确保ChromeDriver已添加到系统PATH或与脚本同目录
-- 查询速度受网络状况和服务器响应影响
-- 程序会自动统计成功和失败的查询数量
-- 失败的查询会在控制台显示具体学号和姓名
 
-## 故障排除
-
-- 如遇ChromeDriver相关错误，请检查Chrome浏览器和Driver版本是否匹配
-- 如遇网络问题，可尝试调整main.py中的线程休眠时间
-- 若出现验证码或访问限制，请稍后再试
-
-## 作者
-
-- by zhl
-- QQ：1302485828
