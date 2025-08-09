@@ -41,7 +41,7 @@ class Work:
         print(f"网页预留间隔为:{self.internal_page}")
         '''
         self.url = 'https://z9lbopmd.yichafen.com//qz//138Owtgzjt'
-        self.max_tasks = 5
+        self.max_tasks = 10
         self.internal_page = 3
         self.visited = {}
         self.wb = Workbook()
@@ -99,7 +99,7 @@ class Work:
                     self.ws.append(data)
                 with self.right_cnt_lock:
                     self.right_cnt += 1
-                print(f"一共 {len(self.column_ID)} 个，第 {self.right_cnt} 个已获取", data)
+                print(f"一共 {len(self.column_ID) - 1} 个，第 {self.right_cnt} 个已获取", data)
                 
                 
 
@@ -165,10 +165,9 @@ class Work:
             self.work(len(self.column_ID) // 3  + i, wd)
         wd.quit()
     '''
-
     def thread(self):
         threads = []
-        total_tasks = len(self.column_ID)
+        total_tasks = len(self.column_ID) - 1
         pbar = tqdm(total=total_tasks, desc="总进度", unit="次数")
         for _ in range(self.max_tasks):
             t = threading.Thread(target=self.run1)
